@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('section')
-<form action="{{route('coches.store')}}" method="post">
+<form action="{{route('coches.store')}}" method="post" enctype="multipart/form-data">
         <label>Nombre</label>
         <input type="text" name="nombre">
         <label>Matricula</label>
@@ -10,6 +10,7 @@
         <input type="text" name="color">
         <label>Año de fabricacion</label>
         <input type="text" name="año_fabricacion">
+        <input type="file" name="foto" id="">
         <input type="submit" value="Crear Registro">
         {{ csrf_field() }}
 

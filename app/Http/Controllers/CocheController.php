@@ -40,6 +40,11 @@ class CocheController extends Controller
 
 
         $datos = $request->all();
+        if($archivo= $request->file("foto")){
+            $nombre = $archivo->getClientOriginalName();
+            $archivo->move("images",$nombre);
+            $datos['foto'] = $nombre;
+        }
         Coche::create($datos);
       /*  $coche = new Coche();
         $coche->nombre= $request->nombre;
@@ -90,6 +95,13 @@ class CocheController extends Controller
         $coche->matricula= $request->matricula;
         $coche->color= $request->color;
         $coche->año_fabricacion= $request->año_fabricacion;
+   
+        if($archivo= $request->file("foto")){
+            $nombre = $archivo->getClientOriginalName();
+            $archivo->move("images",$nombre);
+            $coche->foto = $nombre;
+        }
+     
         $coche->save();
         return redirect("/");
     }

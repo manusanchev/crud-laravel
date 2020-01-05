@@ -14,7 +14,7 @@ class CreateImage extends Migration
     public function up()
     {
         Schema::table('coches', function (Blueprint $table) {
-            //
+            $table->string("foto");
         });
     }
 

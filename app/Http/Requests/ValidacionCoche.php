@@ -28,6 +28,7 @@ class ValidacionCoche extends FormRequest
             "matricula"=>"required",
             "color"=>"required",
             "año_fabricacion"=>"required"
+            
         ];
     }
     public function messages()

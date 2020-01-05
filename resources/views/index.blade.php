@@ -8,6 +8,7 @@
             <th>Matricula</th>
             <th>Color</th>
             <th>Año de fabricacion</th>
+            <th>Foto</th>
             <th>Editar</th>
             <th>Eliminar</th>
         </tr>
@@ -18,6 +19,7 @@
            <td>{{$coche->matricula}}</td>
            <td>{{$coche->color}}</td>
            <td>{{$coche->año_fabricacion}}</td>
+           <td><img src="images/{{$coche->foto}}" alt="" width="50px" height="50px"></td>
            <td><a href="{{route('coches.edit',$coche->id)}}">Editar</a></td>
            <td>
                <form action="{{route('coches.destroy',$coche->id)}}" method="POST">
