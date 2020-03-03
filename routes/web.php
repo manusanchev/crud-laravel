@@ -14,3 +14,6 @@
 
 Route::get("/","CocheController@index");
 Route::resource('/coches',"CocheController");
+Route::get("pagina/1/", function($id){
+    return $id;
+});

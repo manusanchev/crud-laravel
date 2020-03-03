@@ -40,6 +40,7 @@ class CocheController extends Controller
 
 
         $datos = $request->all();
+        
         if($archivo= $request->file("foto")){
             $nombre = $archivo->getClientOriginalName();
             $archivo->move("images",$nombre);
